@@ -14,8 +14,8 @@
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
-  --background-color: white;
-  --light-color: #eee;
+  --background-color: rgb(243, 201, 208);
+  --light-color: red;
   --dark-color: #ccc;
   --text-color: black;
 
