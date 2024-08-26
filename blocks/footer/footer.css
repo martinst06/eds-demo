@@ -1,14 +1,179 @@
+/* stylelint-disable no-descending-specificity */
 footer {
-  padding: 2rem;
-  background-color: var(--light-color);
+  --footer-border-color: #8c8585;
+
+  padding: 0 20px 2rem;
+  background-color: var(--brown);
+  color: var(--gray-3);
   font-size: var(--body-font-size-s);
 }
 
+@media (width >= 1280px) {
+  footer {
+    padding: 24px 60px 48px;
+  }
+}
+
 footer .footer {
-  max-width: 1200px;
+  max-width: var(--max-content-width);
   margin: auto;
 }
 
 footer .footer p {
   margin: 0;
+}     
+
+footer .footer a:any-link {
+  color: var(--gray-3);
+}
+
+footer .footer a:any-link:hover {
+  text-decoration: underline;
+}
+
+footer .footer a:focus-visible {
+  outline: 2px solid var(--blue);
+}
+
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .nav-list .collapsible {
+  margin: 0 -20px;
+}
+
+footer .footer .nav-list .collapsible > button {
+  --link-color: none;
+  --link-hover-color: none;
+
+  border-radius: 0;
+  position: relative;
+  padding: 22px 20px;
+  display: block;
+  width: 100%; 
+  text-align: left;
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  border-block-end: 1px solid var(--footer-border-color);
+  cursor: pointer;
+}
+
+footer .footer .nav-list .collapsible .collapsible-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+footer .footer .nav-list .collapsible > button[aria-expanded="true"] + .collapsible-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  padding-block: 11px;
+  border-block-end: 1px solid var(--footer-border-color);
+}
+
+footer .footer .nav-list .collapsible .collapsible-content .sublist {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .footer .nav-list .collapsible .collapsible-content .sublist > li {
+  padding: 11px 20px;
+}
+
+footer .footer .nav-list .collapsible .collapsible-content .sublist > li a {
+  display: block;
+} 
+
+footer .footer .section:last-child {
+  margin-block: 2rem;
+  font-size: 14px;
+}
+
+@media (width >= 770px) {
+  footer .footer .nav-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+  }
+
+  footer .footer .section.legal .nav-list {
+    display: block;
+  }
+
+  footer .footer .nav-list .collapsible {
+    margin: 0;
+  }
+
+  footer .footer .nav-list .collapsible > button {
+    border-block-end: none;
+    cursor: default;
+    flex-wrap: nowrap;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible > button {
+    display: none;
+  }
+
+  footer .footer .nav-list .collapsible > button[aria-expanded="true"] + .collapsible-content {
+    border-block-end: none;
+  }
+
+  footer .footer .section.legal {
+    margin-block-start: 40px;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible .collapsible-content {
+      border-block-start: 1px solid var(--footer-border-color);
+      padding-block: 1rem;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible .collapsible-content .sublist {
+    flex-flow: row wrap;
+    gap: 20px;
+    overflow: visible;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible .collapsible-content .sublist > li {
+    padding: 0;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible .collapsible-content .sublist > li:not(:last-child) {
+    position: relative;
+  }
+
+  footer .footer .section.legal .nav-list .collapsible .collapsible-content .sublist li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -12px;
+    top: 0;
+    display: inline;
+  }
+
+  /* light footer */
+  footer .footer.light-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .footer.light-footer .section.legal {
+    max-width: 55%;
+    order: 1;
+  }
+
+  footer .footer.light-footer .section.legal .nav-list .collapsible .collapsible-content {
+    border-block-start: none;
+    padding-block: 0;
+  }
+
+  footer .footer.light-footer .section:last-child,
+  footer .footer.light-footer .section.legal {
+    margin-block: 1rem;
+  }
 }
