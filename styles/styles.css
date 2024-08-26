@@ -18,11 +18,10 @@
   --main-light-2: #F7E7DC;
 
   /* colors */
-  --text-color: var(--main-light-1); /*  */
+  --text-color: var(--main-light-1);
   --link-color: var(--main-blue-lighter);
   --link-hover-color: var(--main-blue-darker);
   --background-color: var(--main-blue-darker);
-
   --light-color: var(--main-light-2); /* carousel and cards background, probably whole index actually */
   --dark-color: #ccc; /* carousel box outliner */
 
@@ -55,13 +54,7 @@
   src: local('Arial');
 }
 
-
 /* Do Media Query for 770px */
-/* Do Media Query for 770px */
-/* Do Media Query for 770px */
-/* Do Media Query for 770px */
-
-
 @media (width >= 900px) {
   :root {
     --heading-font-size-xxl: 60px;
