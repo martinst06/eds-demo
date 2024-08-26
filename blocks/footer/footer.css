@@ -46,10 +46,9 @@ footer .footer .nav-list .collapsible {
 }
 
 footer .footer .nav-list .collapsible > button {
-
   --link-color: none;
-
   --link-hover-color: none;
+
   border-radius: 0;
   position: relative;
   padding: 22px 20px;
