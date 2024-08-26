@@ -11,13 +11,20 @@
  */
 
 :root {
+  /* color definition */
+  --main-blue-darker: #405D72;
+  --main-blue-lighter: #51738f;
+  --main-light-1: #FFF8F3;
+  --main-light-2: #F7E7DC;
+
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
-  --background-color: rgb(243, 201, 208);
-  --light-color: red;
-  --dark-color: #ccc;
-  --text-color: black;
+  --text-color: var(--main-light-1); /*  */
+  --link-color: var(--main-blue-lighter);
+  --link-hover-color: var(--main-blue-darker);
+  --background-color: var(--main-blue-darker);
+
+  --light-color: var(--main-light-2); /* carousel and cards background, probably whole index actually */
+  --dark-color: #ccc; /* carousel box outliner */
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -25,18 +32,18 @@
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
+  --body-font-size-m: 22px; /* consider resizing */
   --body-font-size-s: 18px;
   --body-font-size-xs: 16px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
+  --heading-font-size-xxl: 48px; /* consider resizing */
   --heading-font-size-xl: 40px;
   --heading-font-size-l: 32px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
-
+  
   /* nav height */
   --nav-height: 64px;
 }
@@ -47,6 +54,13 @@
   ascent-override: 95%;
   src: local('Arial');
 }
+
+
+/* Do Media Query for 770px */
+/* Do Media Query for 770px */
+/* Do Media Query for 770px */
+/* Do Media Query for 770px */
+
 
 @media (width >= 900px) {
   :root {
@@ -148,14 +162,14 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: unset;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
@@ -175,13 +189,6 @@ button:disabled,
 button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
-}
-
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
 }
 
 main img {
