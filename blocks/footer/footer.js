@@ -15,7 +15,7 @@ function toggleAllNavSections(navSectionContainer, expanded = false) {
 }
 
 function decorateFooterNav(block, footerNavList) {
-  footerNavList.classList.add('nav-list')
+  footerNavList.classList.add('nav-list');
   footerNavList.querySelectorAll(':scope > li').forEach((liEl, idx) => {
     const subList = liEl.querySelector(':scope > ul');
     if (subList) {
@@ -24,7 +24,7 @@ function decorateFooterNav(block, footerNavList) {
       const textNodes = [...liEl.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE);
       const liText = textNodes.map((text) => text.textContent).join('').trim();
       const dropButton = document.createElement('button');
-      const sublistId = `sublist-${toClassName(liText)}-${idx}`; //look again
+      const sublistId = `sublist-${toClassName(liText)}-${idx}`;
       dropButton.textContent = liText;
       [
         { attr: 'type', value: 'button' },
@@ -52,10 +52,7 @@ function decorateFooterNav(block, footerNavList) {
       });
     }
   });
-}
-// ^this is all for mobile
-
-
+} // ^this is all for mobile
 
 /**
  * loads and decorates the footer
@@ -68,7 +65,7 @@ export default async function decorate(block) {
 
   block.textContent = '';
   const footer = document.createElement('div');
-  footer.className = 'footer-content'
+  footer.className = 'footer-content';
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   footer.querySelectorAll('.section > .default-content-wrapper > ul').forEach((ul) => {
@@ -77,7 +74,7 @@ export default async function decorate(block) {
 
   isNotMobile.addEventListener('change', () => {
     requestAnimationFrame(() => toggleAllNavSections(block, isNotMobile.matches));
-  }); //animationn
+  }); // animationn
 
   const yearTag = footer.querySelector('.section:last-child p > u');
 
