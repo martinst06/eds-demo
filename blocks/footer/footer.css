@@ -130,7 +130,7 @@ footer .footer .section:last-child {
   }
 
   footer .footer .section.legal .nav-list .collapsible .collapsible-content {
-      border-block-start: 1px solid var(--footer-border-color);
+      border-block-start: 1px solid var(--main-light-1);
       padding-block: 1rem;
   }
 
